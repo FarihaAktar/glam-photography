@@ -8,7 +8,7 @@ const SingleServicePage = () => {
 
 
     useEffect(() => {
-        fetch("http://localhost:4000/singleService/" + id)
+        fetch("https://lit-temple-74019.herokuapp.com/singleService/" + id)
             .then(res => res.json())
             .then(data => {
                 setSingleService(data[0])

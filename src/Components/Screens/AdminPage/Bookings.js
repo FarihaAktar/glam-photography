@@ -13,7 +13,7 @@ const Bookings = ({ booking }) => {
             status: data.status,
           
         }
-        fetch(`http://localhost:4000/update/${_id}`,{
+        fetch(`https://lit-temple-74019.herokuapp.com/update/${_id}`,{
             method: 'PATCH',
             headers: {
                 Accept: "application/json",

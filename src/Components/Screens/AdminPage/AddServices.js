@@ -23,7 +23,7 @@ const AddServices = () => {
         }
 
         if (productData.imageURL !== null) {
-            const url = 'http://localhost:4000/addService';
+            const url = 'https://lit-temple-74019.herokuapp.com/addService';
             fetch(url, {
                 method: 'POST',
                 headers: {

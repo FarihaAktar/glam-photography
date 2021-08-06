@@ -12,7 +12,7 @@ const Checkout = () => {
 
     // service detail
     useEffect(() => {
-        fetch('http://localhost:4000/singleService/' + key)
+        fetch('https://lit-temple-74019.herokuapp.com/singleService/' + key)
             .then(res => res.json())
             .then(data => setBookings(data[0]))
     }, []);
@@ -28,7 +28,7 @@ const Checkout = () => {
             status: status
         }
 
-        const url = 'http://localhost:4000/addBooking';
+        const url = 'https://lit-temple-74019.herokuapp.com/addBooking';
         fetch(url, {
             method: 'POST',
             headers: {
@@ -46,7 +46,7 @@ const Checkout = () => {
 
     // ordered items
     useEffect(() => {
-        fetch('http://localhost:4000/bookings?email=' + loggedInUser.email)
+        fetch('https://lit-temple-74019.herokuapp.com/bookings?email=' + loggedInUser.email)
             .then(res => res.json())
             .then(data => {
                 setBookingList(data)

@@ -9,7 +9,7 @@ const AdminPage = () => {
     const [loggedInUser] = useContext(UserContext);
 
     useEffect(() => {
-        fetch("http://localhost:4000/admin?email=" + loggedInUser.email)
+        fetch("https://lit-temple-74019.herokuapp.com/admin?email=" + loggedInUser.email)
             .then(res => res.json())
             .then(data => {
                 setIsAdmin(data)
