@@ -1,0 +1,33 @@
+.navbar{
+    position: relative;
+    top:0px
+}
+.navbar::before{
+    content: "";
+    position: absolute;
+    background-color: black;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 100;
+}
+.background{
+    height: 505px;
+    
+}  
+.background::before{
+    content: "";
+    position: absolute;
+    background-image: url("./../../../images/cover.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    top: 0px;
+    left: 0px;
+    height: 570px;
+    width: 100%;
+    z-index: -1;
+    opacity: 100;
+}
