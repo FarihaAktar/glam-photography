@@ -1,21 +1,34 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { addSingleService } from '../../../redux/services/serviceSlice';
 
 const SingleServicePage = () => {
     const { id } = useParams();
 
-    const [singleService, setSingleService] = useState({});
+    const dispatch = useDispatch()
+
+    const singleService = useSelector(state =>{
+        return state.services.singleService
+    })
+  
+    
+    // const [singleService, setSingleService] = useState({});
 
 
     useEffect(() => {
         fetch("https://lit-temple-74019.herokuapp.com/singleService/" + id)
             .then(res => res.json())
             .then(data => {
-                setSingleService(data[0])
+                // setSingleService(data[0])
+                dispatch(addSingleService(data[0]))
+
             })
-    });
+    },[]);
 
     const { title, description, imageURL, price, _id } = singleService;
+    // console.log(singleService)
 
     return (
         <div className='lg:w-10/12 md:w-11/12 sm:w-11/12 w-11/12 m-auto'>

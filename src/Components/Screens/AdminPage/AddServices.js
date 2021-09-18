@@ -7,12 +7,6 @@ const AddServices = () => {
     const { register, handleSubmit } = useForm();
     const [imageURL, setImageURL] = useState();
 
- 
-
-
-  
-
-
     const onSubmit = data => {
 
         const productData = {

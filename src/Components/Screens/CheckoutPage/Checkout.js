@@ -53,7 +53,7 @@ const Checkout = () => {
             })
     }, [])
 
-
+    console.log(bookingList)
     return (
         <div className='add-blog-section h-screen'>
             <div className='flex justify-center items-center pt-20'>
@@ -62,7 +62,7 @@ const Checkout = () => {
                 <div className='rounded-full border-gray-700 border-4 ml-8'></div>
             </div>
             <h1 className='text-center text-gray-500 text-xl' >Fill Out This Form To Place Your Order</h1>
-            <h1 className='text-center text-red-500 text-xl mt-4'>You Ordered {bookingList.length !== 0 ? bookingList.length : 0} Service. <span className='text-gray-700'>Your service is {bookingList.length !== 0 ? bookingList[0]?.status : "Pending"} !</span></h1>
+            <h1 className='text-center text-red-500 text-xl mt-4'>You Ordered {bookingList.length !== 0 ? bookingList.length : 0} Service.{bookingList.length !== 0 ? <span className='text-gray-700'>Your service is {bookingList.length !== 0 ? bookingList[0]?.status : "Pending"} !</span> : ""}</h1>
             <form className='lg:w-5/12 md:w-7/12 sm:w-8/12 w-8/12 p-6 m-auto mt-14' onSubmit={handleSubmit(onSubmit)}>
                 <input className='bg-transparent border-b-2 border-gray-500 w-full focus:outline-none focus:ring-1 focus:ring-yellow-500 focus:border-transparent' placeholder="Enter Name" required {...register("name")} />
                 <br />
